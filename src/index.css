@@ -5,9 +5,36 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #f1f1f1 !important;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+.active {
+   color:red !important;
+}
+.bg-1 {
+    background-color: #1abc9c;
+    color: #ffffff;
+  }
+  .bg-2 {
+    background-color: #474e5d;
+    color: #ffffff;
+  }
+  .bg-3 {
+    background-color: #ffffff;
+    color: #555555;
+  }
+  .bg-4 {
+    background-color: #2f2f2f;
+    color: #ffffff;
+  }
+  .container-fluid {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+  .img-circle {
+    border-radius: 50%;
 }
