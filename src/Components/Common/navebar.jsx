@@ -49,12 +49,7 @@ class Navebar extends React.Component {
       }
       { this.state.isLoggedIn &&
         <li className="nav-item">
-          <NavLink exact activeClassName="active" className="nav-link" to="/gallery">Gallery</NavLink>
-        </li>
-      }
-      { this.state.isLoggedIn &&
-        <li className="nav-item">
-          <button className="nav-link" className="btn nav-link" onClick={this.logout}>Logout</button>
+          <button className="btn nav-link" onClick={this.logout}>Logout</button>
         </li>
       }
       </ul>
