@@ -1,4 +1,5 @@
 import React  from 'react';
+import Api from '../../Api';
 
 class Post extends React.Component {
   constructor(props) {
@@ -7,21 +8,12 @@ class Post extends React.Component {
   }
   componentDidMount() {
     const postId = this.props.match.params.id;
-    fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`)
-      .then(res => res.json())
-      .then(
-        (result) => {
-          this.setState({
-            data: result,
-            isLoading: false
-          });
-        },
-        (error) => {
-          this.setState({
-            isLoading: false
-          });
-        }
-      )
+    Api.get(`posts/${postId}`).then(res => {
+      this.setState({
+          data: res.data.data,
+          isLoading: false
+      });
+    }).catch( error => {console.log(error)});
   }
   render() {
     if(this.state.isLoading) {
@@ -47,7 +39,7 @@ class Post extends React.Component {
             <tr>
               <td>{this.state.data.id}</td>
               <td>{this.state.data.title}</td>
-              <td>{this.state.data.body}</td>
+              <td>{this.state.data.description}</td>
               </tr>
           </tbody>
         </table>
